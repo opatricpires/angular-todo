@@ -1,1 +1,21 @@
-<h1 class="text-3xl font-bold underline">{{ title }}</h1>
+<div class="container mx-auto pt-8">
+  <div class="overflow-hidden bg-white shadow sm:rounded-lg">
+    <div class="px-4 py-5 sm:px-6">
+      <h3 class="text-lg font-medium leading-6 text-gray-900">{{ title }}</h3>
+      <p class="mt-1 max-w-2xl text-sm text-gray-500">{{ subtitle }}</p>
+    </div>
+    <div class="border-t border-gray-200 pt-8 pb-8 pr-4 pl-4" *ngIf="tasks.length">
+      <div *ngFor="let task of tasks">
+        <div class="flex w-full h-auto flex-row border-2 rounded-lg p-2 mb-1">
+          <div>
+            <input type="radio" name="{{ task.taskName }}" id="{{ task.taskName }}" class="mr-2 w-4 h-4">
+          </div>
+          <div class="flex flex-col">
+            <label for="{{ task.taskName }}" class="text-slate-900">{{ task.taskName }}</label>
+            <span class="text-xs text-slate-500">{{ task.taskDescription }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
