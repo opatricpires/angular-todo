@@ -24,4 +24,11 @@ export class AppComponent {
     },
   ];
   subtitle = `Você tem um total de ${this.tasks.length} tarefas para hoje.`;
+  finishTask(id: number): void {
+    const selectedItem = this.tasks.find((item) => item.id === id);
+
+    if (selectedItem) {
+      this.tasks.splice(this.tasks.indexOf(selectedItem), 1);
+    }
+  }
 }

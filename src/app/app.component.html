@@ -11,7 +11,8 @@
             <label for="{{ task.taskName }}" class="text-slate-900">{{ task.taskName }}</label>
             <span class="text-xs text-slate-500" *ngIf="task.taskDescription">{{ task.taskDescription }}</span>
           </div>
-          <button type="button" class="p-2  rounded-md text-xs bg-slate-900 text-slate-100">Concluir</button>
+          <button type="button" class="p-2  rounded-md text-xs bg-slate-900 text-slate-100"
+            (click)="finishTask(task.id)">Concluir</button>
         </div>
       </div>
     </div>
